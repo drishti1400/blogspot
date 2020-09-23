@@ -1,0 +1,49 @@
+<body>
+<section class="py-5">
+  <div class="container">
+<h2 class="font-weight-light">Edit Articles :</h2>
+
+ 
+                        <ul> 
+                           <li *ngFor="let result of results ">
+                           <h3> Title: {{result.title}} </h3>
+                           <h5> Publisher : {{result.publisher}} </h5>  
+                           <h5> Atricle : {{result.article}}  </h5>  
+
+                               <div class="row">
+                           <button type="button" class="btn btn-danger" style="margin:5px;" (click)="onDelete(result.id)">Delete </button>
+                           <button type="button" class="btn btn-warning" style="margin:5px;" (click)="openForm(result)">Update </button>
+                               </div>
+                             <div class="form-popup" id="myForm">
+                             <form class="form-container" (ngSubmit)="onSubmit()" #f="ngForm" name="myform">
+                             <h1>Update</h1>
+                            <input type="hidden" ngModel name="id" #id="ngModel">
+                                <label>Title :</label>
+        <input type="text" class="form-control mb-2" ngModel name="title" required #title="ngModel">
+        <span class="help-block" *ngIf="!title.valid && title.touched" > Please enter something </span>
+         <label>Publisher :</label>
+        <input type="text" class="form-control mb-2" ngModel name="publisher" required #publisher="ngModel">
+        <span class="help-block" *ngIf="!publisher.valid && publisher.touched" > Please enter something </span>
+        <label> Article : </label>
+        <textarea rows="5" class="form-control" ngModel name="article" required #article="ngModel"></textarea>
+        <span class="help-block" *ngIf="!article.valid && article.touched" > Please enter something </span>
+        <br>
+                              <button type="submit" class="btn" (click)="onEdit()">Update</button>
+                             <button type="button" class="btn cancel" (click)="closeForm()">Cancel</button>
+                             </form>
+                            </div>
+
+                           </li>
+                        </ul>
+</div>
+</section>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+</body>

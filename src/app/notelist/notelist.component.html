@@ -1,0 +1,16 @@
+<body>
+<section class="py-5">
+  <div class="container">
+<h2 class="font-weight-light">Discover Latest articles :</h2>
+
+ 
+                        <ul> 
+                           <li *ngFor="let result of results ">
+                           <h3> Title: {{result.title}} </h3>
+                           <h5> Publisher : {{result.publisher}} </h5>  
+                           <h5> Atricle : {{result.article}}  </h5>  
+                           </li>
+                        </ul>
+</div>
+</section>
+</body>

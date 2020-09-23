@@ -1,0 +1,19 @@
+<section class="py-5">
+<div class ="container">
+<p>Admin Login</p>
+<div class="form-group">
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+         <label>Email:</label>
+        <input type="text" class="form-control mb-2" ngModel name="email" required #email="ngModel">
+        <!--<span class="help-block" *ngIf="!publisher.valid && publisher.touched" > Please enter something </span>-->
+        <label> Password : </label>
+        <input  type="password" class="form-control" ngModel name="password" required #password="ngModel">
+        <!--<span class="help-block" *ngIf="!article.valid && article.touched" > Please enter something </span>-->
+        <br>
+        <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary" >Log In</button>
+         </div>   
+  </form>
+  </div>
+  </div>
+  </section>
